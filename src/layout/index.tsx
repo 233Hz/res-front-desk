@@ -1,9 +1,4 @@
-import {
-  GithubFilled,
-  InfoCircleFilled,
-  LogoutOutlined,
-  QuestionCircleFilled
-} from '@ant-design/icons'
+import { DesktopOutlined, LogoutOutlined, MessageOutlined, UserOutlined } from '@ant-design/icons'
 import { PageContainer, ProConfigProvider, ProLayout } from '@ant-design/pro-components'
 import { ConfigProvider, Dropdown } from 'antd'
 import { useNavigate, useLocation, Outlet } from 'react-router-dom'
@@ -14,6 +9,8 @@ import route from './route'
 const Layout = () => {
   const navigate = useNavigate()
   const location = useLocation()
+
+  const menuClick = (path?: any) => (path && isExternalLink(path)) || navigate(path || '/index')
 
   return (
     <div
@@ -47,9 +44,6 @@ const Layout = () => {
                 colorBgMenuItemSelected: 'rgba(0,0,0,0.04)'
               }
             }}
-            menu={{
-              collapsedShowGroupTitle: true
-            }}
             avatarProps={{
               src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
               size: 'small',
@@ -76,36 +70,16 @@ const Layout = () => {
               if (_props.isMobile) return []
               if (typeof window === 'undefined') return []
               return [
-                <InfoCircleFilled key='InfoCircleFilled' />,
-                <QuestionCircleFilled key='QuestionCircleFilled' />,
-                <GithubFilled key='GithubFilled' />
+                <MessageOutlined key='MessageOutlined' onClick={() => navigate('/my/notify')} />,
+                <DesktopOutlined key='DesktopOutlined' />,
+                <UserOutlined key='UserOutlined' onClick={() => navigate('/my')} />
               ]
             }}
-            menuFooterRender={_props => {
-              if (_props?.collapsed) return undefined
-              return (
-                <div
-                  style={{
-                    textAlign: 'center',
-                    paddingBlockStart: 12
-                  }}
-                >
-                  <div>© 2023 泼猴信息 版权所有</div>
-                </div>
-              )
-            }}
             onMenuHeaderClick={() => navigate('/index')}
-            menuItemRender={(item, dom) => (
-              <div
-                onClick={() =>
-                  (item.path && isExternalLink(item.path)) || navigate(item.path || '/index')
-                }
-              >
-                {dom}
-              </div>
-            )}
+            subMenuItemRender={(item, dom) => <div onClick={() => menuClick(item.path)}>{dom}</div>}
+            menuItemRender={(item, dom) => <div onClick={() => menuClick(item.path)}>{dom}</div>}
           >
-            <PageContainer breadcrumbRender={false} title={false}>
+            <PageContainer title={false}>
               <Outlet />
             </PageContainer>
           </ProLayout>

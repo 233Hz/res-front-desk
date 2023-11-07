@@ -11,11 +11,11 @@ const data = [
   'Los Angeles battles huge wildfires.'
 ]
 
-const AnnouncementPanel: React.FC = () => {
+const DemandPanel: React.FC = () => {
   const navigate = useNavigate()
   return (
     <Card
-      title='通知公告'
+      title='资源需求'
       className='mt-[16px] p-0'
       extra={<Button type='text'>更多</Button>}
       bodyStyle={{ padding: 0 }}
@@ -25,12 +25,9 @@ const AnnouncementPanel: React.FC = () => {
         dataSource={data}
         renderItem={item => (
           <List.Item>
-            <div className='flex gap-[10px] w-full cursor-pointer'>
-              <div className='flex-1 truncate'>
-                <a onClick={() => navigate(`/notify/${1}`)}>{item}</a>
-              </div>
-              <div className='text-gray-400 overflow-hidden'>2023-01-01</div>
-            </div>
+            <p className='w-full hover:text-green-600 cursor-pointer truncate'>
+              <a onClick={() => navigate('/demand/1')}>{item}</a>
+            </p>
           </List.Item>
         )}
       />
@@ -38,4 +35,4 @@ const AnnouncementPanel: React.FC = () => {
   )
 }
 
-export default AnnouncementPanel
+export default DemandPanel
