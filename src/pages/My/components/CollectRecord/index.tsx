@@ -26,21 +26,23 @@ const CollectRecord: React.FC = () => {
     <List
       pagination={{ position: 'bottom', align: 'center' }}
       dataSource={data}
-      renderItem={item => (
+      renderItem={(item) => (
         <List.Item>
-          <div className='w-full flex items-center gap-[16px]'>
-            <div className='flex-1 overflow-hidden'>
-              <div className='truncate text-[14px] font-semibold text-gray-950'>
+          <div className="w-full flex items-center gap-[16px]">
+            <div className="flex-1 overflow-hidden">
+              <div className="truncate text-[14px] font-semibold text-gray-950">
                 <a>{item.title}</a>
               </div>
-              <div className='text-[14px] font-thin text-gray-400 mt-[8px]'>{item.time}</div>
+              <div className="text-[14px] font-thin text-gray-400 mt-[8px]">
+                {item.time}
+              </div>
             </div>
             <div>
               <span
-                className='bg-red-100 px-[4px] rounded-sm cursor-pointer text-red-400'
-                key='collect'
+                className="bg-red-100 px-[4px] rounded-sm cursor-pointer text-red-400"
+                key="collect"
               >
-                <span className='icon-heart mr-[4px]' />
+                <span className="icon-heart mr-[4px]" />
                 取消收藏
               </span>
             </div>

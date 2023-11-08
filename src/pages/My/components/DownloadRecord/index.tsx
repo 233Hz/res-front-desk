@@ -26,11 +26,15 @@ const DownloadRecord: React.FC = () => {
     <List
       pagination={{ position: 'bottom', align: 'center' }}
       dataSource={data}
-      renderItem={item => (
+      renderItem={(item) => (
         <List.Item>
-          <div className='w-full flex gap-[16px]'>
-            <a className='flex-1 truncate text-[14px] font-semibold text-gray-950'>{item.title}</a>
-            <span className='text-[14px] font-thin text-gray-400'>{item.time}</span>
+          <div className="w-full flex gap-[16px]">
+            <a className="flex-1 truncate text-[14px] font-semibold text-gray-950">
+              {item.title}
+            </a>
+            <span className="text-[14px] font-thin text-gray-400">
+              {item.time}
+            </span>
           </div>
         </List.Item>
       )}

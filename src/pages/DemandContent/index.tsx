@@ -38,31 +38,31 @@ const DemandContent: React.FC = () => {
   return (
     <>
       <Card>
-        <div className='text-[20px] font-semibold text-center'>
+        <div className="text-[20px] font-semibold text-center">
           这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题
         </div>
         <Divider plain>
-          <div className='flex gap-[16px] text-[14px] font-thin text-gray-400'>
+          <div className="flex gap-[16px] text-[14px] font-thin text-gray-400">
             <span>
-              <span className='icon-user mr-[8px]' />
+              <span className="icon-user mr-[8px]" />
               张三
             </span>
             <span>
-              <span className='icon-time mr-[8px]' />
+              <span className="icon-time mr-[8px]" />
               2023-01-01
             </span>
             <span>
-              <span className='icon-view mr-[8px]' />
+              <span className="icon-view mr-[8px]" />
               200
             </span>
             <span>
-              <span className='icon-status mr-[8px]' />
+              <span className="icon-status mr-[8px]" />
               未完成
             </span>
           </div>
         </Divider>
         <article
-          className='prose lg:prose-xl max-w-none'
+          className="prose lg:prose-xl max-w-none"
           dangerouslySetInnerHTML={{
             __html: `
             <h1>H1  这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的内容</h1>
@@ -94,24 +94,26 @@ const DemandContent: React.FC = () => {
           }}
         />
       </Card>
-      <Card title='回复内容' className='mt-[16px]'>
-        <Space.Compact size='large' style={{ width: '100%' }}>
+      <Card title="回复内容" className="mt-[16px]">
+        <Space.Compact size="large" style={{ width: '100%' }}>
           <Input />
-          <Button type='primary'>回复</Button>
+          <Button type="primary">回复</Button>
         </Space.Compact>
         <List
           pagination={{ position: 'bottom', align: 'center' }}
           dataSource={data}
           renderItem={(item, index) => (
-            <List.Item actions={[<a key='delete'>删除</a>]}>
+            <List.Item actions={[<a key="delete">删除</a>]}>
               <List.Item.Meta
                 avatar={
-                  <Avatar src={`https://xsgames.co/randomusers/avatar.php?g=pixel&key=${index}`} />
+                  <Avatar
+                    src={`https://xsgames.co/randomusers/avatar.php?g=pixel&key=${index}`}
+                  />
                 }
                 title={
                   <div>
                     <a>{item.user}</a>
-                    <span className='ml-[16px] text-[14px] font-thin text-gray-400'>
+                    <span className="ml-[16px] text-[14px] font-thin text-gray-400">
                       {item.time}
                     </span>
                   </div>

@@ -4,27 +4,27 @@ import React from 'react'
 const NotifyContent: React.FC = () => {
   return (
     <Card>
-      <div className='text-[20px] font-semibold text-center'>
+      <div className="text-[20px] font-semibold text-center">
         这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题
       </div>
       <Divider plain>
-        <div className='flex gap-[16px] text-[14px] font-thin text-gray-400'>
+        <div className="flex gap-[16px] text-[14px] font-thin text-gray-400">
           <span>
-            <span className='icon-user mr-[8px]' />
+            <span className="icon-user mr-[8px]" />
             张三
           </span>
           <span>
-            <span className='icon-time mr-[8px]' />
+            <span className="icon-time mr-[8px]" />
             2023-01-01
           </span>
           <span>
-            <span className='icon-view mr-[8px]' />
+            <span className="icon-view mr-[8px]" />
             200
           </span>
         </div>
       </Divider>
       <article
-        className='prose lg:prose-xl max-w-none'
+        className="prose lg:prose-xl max-w-none"
         dangerouslySetInnerHTML={{
           __html: `
             <h1>H1  这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的内容</h1>

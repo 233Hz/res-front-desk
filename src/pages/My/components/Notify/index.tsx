@@ -34,27 +34,27 @@ const Notify: React.FC = () => {
   const navigate = useNavigate()
   return (
     <List
-      itemLayout='vertical'
+      itemLayout="vertical"
       pagination={{ position: 'bottom', align: 'center' }}
       dataSource={data}
-      renderItem={item => (
+      renderItem={(item) => (
         <List.Item
           actions={[
-            <span key='user'>
-              <span className='icon-user mr-[8px]' />
+            <span key="user">
+              <span className="icon-user mr-[8px]" />
               {item.user}
             </span>,
-            <span key='time'>
-              <span className='icon-time mr-[8px]' />
+            <span key="time">
+              <span className="icon-time mr-[8px]" />
               {item.time}
             </span>,
-            <span key='view'>
-              <span className='icon-view mr-[8px]' />
+            <span key="view">
+              <span className="icon-view mr-[8px]" />
               {item.viewCount}
             </span>
           ]}
         >
-          <div className='w-full truncate text-[14px] font-semibold text-gray-950'>
+          <div className="w-full truncate text-[14px] font-semibold text-gray-950">
             <a onClick={() => navigate('/notify/1')}>{item.title}</a>
           </div>
         </List.Item>

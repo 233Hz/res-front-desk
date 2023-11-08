@@ -46,7 +46,11 @@ const My: React.FC = () => {
 
   return (
     <Card>
-      <Tabs defaultActiveKey={params.tab || tabItems[0].key} tabPosition='left' items={tabItems} />
+      <Tabs
+        defaultActiveKey={params.tab || tabItems[0].key}
+        tabPosition="left"
+        items={tabItems}
+      />
     </Card>
   )
 }

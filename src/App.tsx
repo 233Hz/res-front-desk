@@ -4,7 +4,7 @@ import routes from './router'
 
 function App() {
   const element = useRoutes(routes)
-  return <div id='app'>{element}</div>
+  return <div id="app">{element}</div>
 }
 
 export default App

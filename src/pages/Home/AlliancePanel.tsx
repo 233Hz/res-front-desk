@@ -12,14 +12,17 @@ const data = [
 
 const AlliancePanel: React.FC = () => {
   return (
-    <Card title='双创联盟' className='mt-[16px] p-0' bodyStyle={{ padding: 0 }}>
+    <Card title="双创联盟" className="mt-[16px] p-0" bodyStyle={{ padding: 0 }}>
       <List
-        size='small'
+        size="small"
         dataSource={data}
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item>
             <a>
-              <img src={item} className='w-full h-[80px] rounded-md object-cover cursor-pointer' />
+              <img
+                src={item}
+                className="w-full h-[80px] rounded-md object-cover cursor-pointer"
+              />
             </a>
           </List.Item>
         )}

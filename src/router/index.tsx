@@ -19,7 +19,7 @@ const routes: RouteObject[] = [
   },
   {
     path: '/',
-    element: <Navigate to='/index' />
+    element: <Navigate to="/index" />
   },
   {
     path: '/',

@@ -28,24 +28,24 @@ const PostDemand: React.FC = () => {
   const navigate = useNavigate()
   return (
     <>
-      <div className='flex justify-end'>
-        <CustomModalForm type='add' />
+      <div className="flex justify-end">
+        <CustomModalForm type="add" />
       </div>
       <List
         pagination={{ position: 'bottom', align: 'center' }}
         dataSource={data}
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item
             actions={[
-              <CustomModalForm type='update' key='edit' />,
-              <Button type='link' icon={<DeleteOutlined />} key='delete' danger>
+              <CustomModalForm type="update" key="edit" />,
+              <Button type="link" icon={<DeleteOutlined />} key="delete" danger>
                 删除
               </Button>
             ]}
           >
             <List.Item.Meta
               title={
-                <div className='w-full truncate text-[14px] font-semibold text-gray-950'>
+                <div className="w-full truncate text-[14px] font-semibold text-gray-950">
                   <a onClick={() => navigate('/demand/1')}>{item.title}</a>
                 </div>
               }

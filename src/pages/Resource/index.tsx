@@ -5,7 +5,17 @@ import Search from 'antd/es/input/Search'
 import { SearchProps } from 'antd/lib/input'
 import { HeartOutlined } from '@ant-design/icons'
 
-const category = ['全部', 'word', 'ppt', 'excel', 'pdf', 'pptx', 'docx', 'doc', 'xlsx']
+const category = [
+  '全部',
+  'word',
+  'ppt',
+  'excel',
+  'pdf',
+  'pptx',
+  'docx',
+  'doc',
+  'xlsx'
+]
 const groups = ['全部', '最新发布', '最多浏览']
 const list = Array.from({ length: 20 }).map((_, index) => index + 1)
 
@@ -15,7 +25,8 @@ interface SearchParams {
   groupActiveIndex: number
 }
 
-const onSearch: SearchProps['onSearch'] = (value, _e, info) => console.log(info?.source, value)
+const onSearch: SearchProps['onSearch'] = (value, _e, info) =>
+  console.log(info?.source, value)
 
 const Resource: React.FC = () => {
   const params = useParams()
@@ -29,16 +40,18 @@ const Resource: React.FC = () => {
   return (
     <>
       <Card>
-        <div className='flex flex-col gap-[16px]'>
+        <div className="flex flex-col gap-[16px]">
           <Search
             value={searchParams.name}
-            placeholder='关键词搜索'
-            onChange={e => setSearchParams({ ...searchParams, name: e.target.value })}
+            placeholder="关键词搜索"
+            onChange={(e) =>
+              setSearchParams({ ...searchParams, name: e.target.value })
+            }
             onSearch={onSearch}
-            size='large'
+            size="large"
             style={{ width: 400 }}
           />
-          <div className='flex flex-wrap gap-[16px]'>
+          <div className="flex flex-wrap gap-[16px]">
             {category.map((item, index) => (
               <span
                 className={[
@@ -48,21 +61,30 @@ const Resource: React.FC = () => {
                     : ''
                 ].join(' ')}
                 key={item}
-                onClick={() => setSearchParams({ ...searchParams, categoryActiveIndex: index })}
+                onClick={() =>
+                  setSearchParams({
+                    ...searchParams,
+                    categoryActiveIndex: index
+                  })
+                }
               >
                 {item}
               </span>
             ))}
           </div>
-          <div className='flex flex-wrap gap-[16px]'>
+          <div className="flex flex-wrap gap-[16px]">
             {groups.map((item, index) => (
               <span
                 className={[
                   'bg-[#f6f6f6] text-gray-400 px-[12px] py-[4px] cursor-pointer',
-                  searchParams.groupActiveIndex === index ? 'font-bold bg-lime-500 text-white' : ''
+                  searchParams.groupActiveIndex === index
+                    ? 'font-bold bg-lime-500 text-white'
+                    : ''
                 ].join(' ')}
                 key={item}
-                onClick={() => setSearchParams({ ...searchParams, groupActiveIndex: index })}
+                onClick={() =>
+                  setSearchParams({ ...searchParams, groupActiveIndex: index })
+                }
               >
                 {item}
               </span>
@@ -70,32 +92,36 @@ const Resource: React.FC = () => {
           </div>
         </div>
       </Card>
-      <div className='grid grid-cols-4 gap-[16px] mt-[16px]'>
-        {list.map(item => (
+      <div className="grid grid-cols-4 gap-[16px] mt-[16px]">
+        {list.map((item) => (
           <Badge.Ribbon
-            text={category.find((_item, index) => index === searchParams.categoryActiveIndex)}
-            color='green'
+            text={category.find(
+              (_item, index) => index === searchParams.categoryActiveIndex
+            )}
+            color="green"
             key={item}
           >
             <Card
               hoverable
               cover={
                 <img
-                  alt='example'
-                  src='https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png'
+                  alt="example"
+                  src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png"
                 />
               }
-              actions={[<HeartOutlined key='collect' />]}
+              actions={[<HeartOutlined key="collect" />]}
               bodyStyle={{ padding: 10 }}
               onClick={() => navigate(`/resource-preview/${item}`)}
             >
-              <p className='text-[16px] text-gray-950 font-semibold line-clamp-2 hover:text-lime-500'>
-                <a>这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题</a>
+              <p className="text-[16px] text-gray-950 font-semibold line-clamp-2 hover:text-lime-500">
+                <a>
+                  这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题
+                </a>
               </p>
-              <p className='flex justify-between mt-[16px] text-[14px] text-gray-400'>
+              <p className="flex justify-between mt-[16px] text-[14px] text-gray-400">
                 <span>2023-01-01</span>
                 <span>
-                  <span className='icon-view' />
+                  <span className="icon-view" />
                   100
                 </span>
               </p>
@@ -103,7 +129,7 @@ const Resource: React.FC = () => {
           </Badge.Ribbon>
         ))}
       </div>
-      <div className='flex justify-center mt-[16px]'>
+      <div className="flex justify-center mt-[16px]">
         <Pagination defaultCurrent={1} total={50} />
       </div>
     </>

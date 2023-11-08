@@ -15,17 +15,17 @@ const DemandPanel: React.FC = () => {
   const navigate = useNavigate()
   return (
     <Card
-      title='资源需求'
-      className='mt-[16px] p-0'
-      extra={<Button type='text'>更多</Button>}
+      title="资源需求"
+      className="mt-[16px] p-0"
+      extra={<Button type="text">更多</Button>}
       bodyStyle={{ padding: 0 }}
     >
       <List
-        size='small'
+        size="small"
         dataSource={data}
-        renderItem={item => (
+        renderItem={(item) => (
           <List.Item>
-            <p className='w-full hover:text-green-600 cursor-pointer truncate'>
+            <p className="w-full hover:text-green-600 cursor-pointer truncate">
               <a onClick={() => navigate('/demand/1')}>{item}</a>
             </p>
           </List.Item>

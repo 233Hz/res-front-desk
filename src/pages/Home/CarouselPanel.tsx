@@ -19,8 +19,13 @@ const bannerList = [
 const CarouselPanel: React.FC = () => {
   return (
     <Carousel autoplay>
-      {bannerList.map(item => (
-        <img className='w-full h-[300px]' src={item.imgUrl} key={item.id} alt='轮播' />
+      {bannerList.map((item) => (
+        <img
+          className="w-full h-[300px]"
+          src={item.imgUrl}
+          key={item.id}
+          alt="轮播"
+        />
       ))}
     </Carousel>
   )
